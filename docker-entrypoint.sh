@@ -52,8 +52,10 @@ DEPLOYMENT_COMMAND_OPTIONS=""
 
 
 if [ "$INPUT_COPY_STACK_FILE" == "true" ]; then
+  echo "patch stack filename"
   STACK_FILE="$INPUT_DEPLOY_PATH/$STACK_FILE"
 else
+  echo "create deployment command"
   DEPLOYMENT_COMMAND_OPTIONS=" --log-level debug --host ssh://$INPUT_REMOTE_DOCKER_HOST:$INPUT_REMOTE_DOCKER_PORT"
 fi
 
